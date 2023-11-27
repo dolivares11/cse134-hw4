@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul id = "menu">
+                    <li><a href="#about">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="about">
+                <picture>
+                    <source type="image/jxl" srcset="images/profilePicture.jxl">
+                    <source type="image/jpeg" srcset="images/profilePicture.jpg">
+                    <source type="image/webp" srcset="images/profilePicture.webp">
+                    <source type="image/png" srcset="images/profilePicture.png">
+                    <img src="images/profilePicture.jpg" alt="Profile Picture">
+                </picture>
+                <h1>Hi, I'm Dylan Olivares</h1>
+                <p>I am an enthusiastic software engineer looking for new opportunities.</p>
+            </section>
+
+            <section id="projects">
+                <h2>Projects</h2>
+                <ol>
+                    <li>
+                        <a href="https://github.com/dolivares11/Crypto-Tracker" target="_blank"></a>
+                        <h3>Crypto Tracker</h3>
+                        <picture>
+                            <source type="image/jpeg" srcset="images/Project1.jpg">
+                            <source type="image/webp" srcset="images/Project1.webp">
+                            <source type="image/png" srcset="images/Project1.png">
+                            <img src="images/Project1.jpg" alt="Crypto Tracker Project">
+                        </picture>
+                    </li>
+                    <li>
+                        <h3>Palm Reading</h3>
+                        <picture>
+                            <source type="image/jpeg" srcset="images/Project2.jpg">
+                            <source type="image/webp" srcset="images/Project2.webp">
+                            <source type="image/png" srcset="images/Project2.png">
+                            <img src="images/Project2.jpg" alt="Palm Reading Project">
+                        </picture>
+                        <a href="https://github.com/cse110-sp23-group3/cse110-sp23-group3" target="_blank"></a>
+                    </li>
+                    <li>
+                        <h3>Flutter Safety</h3>
+                        <picture>
+                            <source type="image/jpeg" srcset="images/Project3.jpg">
+                            <source type="image/webp" srcset="images/Project3.webp">
+                            <source type="image/png" srcset="images/Project3.png">
+                            <img src="images/Project3.jpg" alt="Flutter Safety Project">
+                        </picture>
+                        <a href="https://github.com/Renzo-Olivares/flutter_virus" target="_blank"></a>
+                    </li>
+                </ol>
+            </section>
+
+            <section id="resume">
+                <h2>Resume</h2>
+                <picture>
+                    <source type="image/jxl" srcset="images/Resume.jxl">
+                    <source type="image/jpeg" srcset="images/Resume.jpg">
+                    <img src="images/Resume.jpg" alt="Resume">
+                </picture>
+                <button type="submit">Download</button>
+            </section>
+
+            <section id="contact">
+                <h2>Contact</h2>
+                <form action="https://httpbin.org/post" method="POST">
+                    <h3>Send me a message!</h3>
+
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name" required>
+                    <output for="name" class="error"></output>
+                    <output for="name" class="error"></output>
+
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email address" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+                    <output for="email" class="error"></output>
+                    <output for="email" class="info"></output>
+
+                    <label for="message">Message:</label>
+                    <textarea name="message" id="message" placeholder="Send me a message!" required minlength="10" maxlength="400"></textarea>
+                    <output for="message" class="error"></output>
+                    <output for="message" class="info"></output>
+
+                    <input type="hidden" name="possible_bot" value="true">
+
+                    <button type="submit">Send</button>
+                </form>
+            </section>
+        </main>
+    </body>
+</html>

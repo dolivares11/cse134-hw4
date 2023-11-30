@@ -1,11 +1,11 @@
-window.addEventListener("DOMContentLoaded", function() {
-    const name = document.getElementById("name");
-    const email = document.getElementById("email");
-    const message = document.getElementById("message");
-    const form = document.getElementById("contact-form");
-    const formErrorsField = document.getElementById("form-errors");
-    const toggleButton = document.getElementById("toggle");
-    const resumeButton = document.getElementById("resume-button");
+window.addEventListener("DOMContentLoaded", function () {
+    let name = document.getElementById("name");
+    let email = document.getElementById("email");
+    let message = document.getElementById("message");
+    let form = document.getElementById("contact-form");
+    let formErrorsField = document.getElementById("form-errors");
+    let toggleButton = document.getElementById("toggle");
+    let resumeButton = document.getElementById("resume-button");
     let formErrors = [];
 
     const isDarkMode = localStorage.getItem('darkMode') === 'true';
@@ -21,7 +21,6 @@ window.addEventListener("DOMContentLoaded", function() {
         console.log(formErrors);
         formErrorsField.value = JSON.stringify(formErrors);
 
-        // Display errors in the console (you can send this data to the server)
         console.log(formErrors);
 
     });
@@ -32,7 +31,6 @@ window.addEventListener("DOMContentLoaded", function() {
         const isDarkMode = body.classList.toggle('dark-mode');
         const resumeButtonDark = resumeButton.classList.toggle('dark-mode');
         const formDark = form.classList.toggle('dark-mode');
-        // Save the current mode to localStorage
         localStorage.setItem('darkMode', isDarkMode);
       });
 
@@ -46,7 +44,7 @@ window.addEventListener("DOMContentLoaded", function() {
           showError(name);
         } else {
             name.setCustomValidity("");
-            clearError(name);
+            removeError(name);
         }
     });
 
@@ -60,7 +58,7 @@ window.addEventListener("DOMContentLoaded", function() {
         showError(email);
       } else {
         email.setCustomValidity("");
-        clearError(email);
+        removeError(email);
       }
     });
 
@@ -76,9 +74,6 @@ window.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-
-
-    // Helper functions for showing and clearing errors
     function showError(element) {
         const errorOutput = element.nextElementSibling;
         console.log(errorOutput)
@@ -86,7 +81,7 @@ window.addEventListener("DOMContentLoaded", function() {
         errorOutput.classList.add("flash");
     }
 
-    function clearError(element) {
+    function removeError(element) {
         const errorOutput = element.nextElementSibling;
         errorOutput.textContent = "";
         errorOutput.classList.remove("flash");

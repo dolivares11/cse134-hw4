@@ -271,13 +271,13 @@ input:focus, textarea:focus {
 
 output[for="name"]:empty,
 output[for="email"]:empty,
-output[for="comments"]:empty {
+output[for="message"]:empty {
     display: none;
 }
 
 output[for="name"]:not(:empty),
 output[for="email"]:not(:empty),
-output[for="comments"]:not(:empty) {
+output[for="message"]:not(:empty) {
     display: block;
     color: #ff0000;
 }

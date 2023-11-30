@@ -11,8 +11,6 @@
     --border-color: #ccc;
     --primary-font: 'Inconsolata';
     --secondary-font: monospace;
-    --background-color-dark: #333;
-    --text-color-dark: #f5f5f5;
 }
 
 html {
@@ -46,25 +44,18 @@ ul#menu {
     text-align: center;
 }
 
-ul#menu li:has(a), ul#menu li {
-    border-radius: 1dvw;
-    background-color: var(--secondary-color, pink);
-    padding: 1rem;
-    color: black;
-}
-
-ul#menu li:has(a) {
+ul#menu > li:has(a) {
     display: inline-block;
-}
-
-#toggle {
-    cursor: pointer;
+    border-radius: 1dvw;
+    /* background-color: rgba(255, 192, 203, .5); */
+    background-color: var(--secondary-color, pink);
 }
 
 ul#menu > li > a {
     color: black;
     text-decoration: none;
     display: block;
+    padding: 1rem;
 }
 
 section {
@@ -263,8 +254,6 @@ section > h2 {
     border-radius: 1rem;
     font-size: 1.5rem;
     cursor: pointer;
-    display: block;
-    margin: 1rem;
 }
 
 #contact {
@@ -275,54 +264,22 @@ input:focus, textarea:focus {
     outline: none;
 }
 
-output[for="name"],
-output[for="email"],
-output[for="comments"] {
-  display: block;
-  color: #ff0000;
-  padding: .5rem;
+#contact input:required:user-invalid,
+#contact textarea:required:user-invalid {
+    border: 2px solid #ff0000;
 }
 
-.info {
-    color: #007bff;
-  }
-  
-.warn {
-    color: #ff9800;
-}
-
-.error {
-    color: #ff0000;
-}
-
-@keyframes flash {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-  
-.flash {
-    animation: flash 1s 5; /* Adjust the duration as needed */
-}
-
-body.dark-mode {
-    background-color: var(--background-color-dark);
-    color: var(--text-color-dark);
-}
-
-#resume button.dark-mode {
-    background-color: white;
-    color: black;
-}
-
-#contact form.dark-mode {
-    background-color: darkblue;
-    color: var(--text-color-dark);
-    border-color: black;
-}
-
-#toggle {
+output[for="name"]:empty,
+output[for="email"]:empty,
+output[for="comments"]:empty {
     display: none;
+}
+
+output[for="name"]:not(:empty),
+output[for="email"]:not(:empty),
+output[for="comments"]:not(:empty) {
+    display: block;
+    color: #ff0000;
 }
 
 @media (min-width: 0px) and (max-width: 767px) {

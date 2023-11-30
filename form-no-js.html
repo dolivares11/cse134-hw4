@@ -4,8 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width-device-width, initial-scale=1.0">
         <title>Portfolio</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
+        <link rel="stylesheet" href="form-no-js.css">
     </head>
     <body>
         <header>
@@ -15,7 +14,6 @@
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#resume">Resume</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li id="toggle">Toggle</li>
                 </ul>
             </nav>
         </header>
@@ -75,7 +73,7 @@
                     <source type="image/jpeg" srcset="images/Resume.jpg">
                     <img src="images/Resume.jpg" alt="Resume">
                 </picture>
-                <button id="resume-button" type="submit">Download</button>
+                <button type="submit">Download</button>
             </section>
 
             <section id="contact">
@@ -86,10 +84,10 @@
                     <label for="name">Name:</label>
                     <input type="text" name="name" id="name" placeholder="Enter your name" required pattern="[a-zA-Z\s]*">
                     <output for="name" class="error"></output>
-                    <output for="name" class="info"></output>
+                    <output for="name" class="error"></output>
 
                     <label for="email">Email:</label>
-                    <input type="email" name="email" id="email" placeholder="Enter your email address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                    <input type="email" name="email" id="email" placeholder="Enter your email address" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
                     <output for="email" class="error"></output>
                     <output for="email" class="info"></output>
 
@@ -99,7 +97,6 @@
                     <output for="message" class="info"></output>
 
                     <input type="hidden" name="possible_bot" value="true">
-                    <input type="hidden" name="form-errors" id="form-errors">
 
                     <button type="submit">Send</button>
                 </form>

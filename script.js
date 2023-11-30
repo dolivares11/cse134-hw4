@@ -74,12 +74,6 @@ window.addEventListener("DOMContentLoaded", function() {
         } else {
           info.classList.remove("warn");
         }
-    
-        if (remainingCharacters < 0) {
-          info.classList.add("error");
-        } else {
-          info.classList.remove("error");
-        }
     });
 
 

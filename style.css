@@ -277,17 +277,17 @@ input:focus, textarea:focus {
 
 output[for="name"],
 output[for="email"],
-output[for="comments"] {
+output[for="message"] {
   display: block;
+  background-color: none;
   color: #ff0000;
-  padding: .5rem;
 }
 
-.info {
+output[for="message"].info {
     color: #007bff;
   }
   
-.warn {
+output[for="message"].warn {
     color: #ff9800;
 }
 
